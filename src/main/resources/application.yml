@@ -1,0 +1,23 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: fairmarket-resale-service
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+    listener:
+      simple:
+        acknowledge-mode: manual
+
+fairmarket:
+  resale:
+    queue: "fairmarket.resale.queue"
+    dlq: "fairmarket.resale.dlq"
+    exchange: "fairmarket.resale.exchange"
+    dlx: "fairmarket.resale.dlx"
+    routing-key: "resale.key"
+    dlq-routing-key: "resale.dlq.key"
